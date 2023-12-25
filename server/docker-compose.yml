@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: your-dockerhub-username/Monogram:latest
+    env_file:
+      - Monogram-env
+    ports:
+      - "7045:80"
