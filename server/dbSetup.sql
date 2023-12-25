@@ -17,17 +17,26 @@ CREATE TABLE
         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         name VARCHAR(255) NOT NULL,
         description VARCHAR(2500) NOT NULL,
+        imgUrl VARCHAR(1000) NOT NULL,
         price INT NOT NULL
     ) default charset utf8;
 
 SELECT * FROM products;
 
 INSERT INTO
-    products (name, description, price)
+    products (
+        name,
+        description,
+        imgUrl,
+        price
+    )
 VALUES (
-        "Mini Console",
-        "Yep it's a mini console alright",
-        288
+        "Audio Console",
+        "Yep it's a audio console alright",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/Everyday-Bundle-Mocks-final_1920x1281_crop_center.jpg.webp?v=1660013247",
+        499
     );
 
 DROP TABLE products;
+
+DELETE FROM products WHERE id = 2;

@@ -27,4 +27,19 @@ public class ProductsController : ControllerBase
             return BadRequest(error.Message);
         }
     }
+
+    // Get Product By Id
+    [HttpGet("{productId}")]
+    public ActionResult<Product> GetProductById(int productId)
+    {
+        try
+        {
+            Product product = _productsService.GetProductById(productId);
+            return Ok(product);
+        }
+        catch (Exception error)
+        {
+            return BadRequest(error.Message);
+        }
+    }
 }

@@ -1,19 +1,17 @@
 <template>
-  <header>
-    <Navbar />
+  <header class="sticky-top d-flex justify-content-center">
+    <Navmenu />
   </header>
   <main>
     <router-view />
   </main>
-   <footer class="bg-dark text-light">
-    Made with 💖 by CodeWorks
-  </footer>
 </template>
 
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
+import Navmenu from './components/Navmenu.vue'
 
 export default {
   setup() {
@@ -21,20 +19,17 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar }
+  components: { Navbar, Navmenu }
 }
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
 
-:root{
-  --main-height: calc(100vh - 32px - 64px);
+.color-bg {
+  background-color: #1a2456;
 }
 
-
-footer {
-  display: grid;
-  place-content: center;
-  height: 32px;
+.color-txt {
+  color: #ff8b68;
 }
 </style>
