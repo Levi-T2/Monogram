@@ -7,16 +7,44 @@
         </div>
       </div>
     </section>
+    <section v-if="products.length" class="row mt-3">
+      <div v-for="product in products" :key="product.id" class="col-12 col-md-5">
+        <ProductCard :product="product" />
+      </div>
+    </section>
+    <section v-else class="row mt-3">
+      <div class="col-12 col-md-4">
+        <p>Loading Products...</p>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
+import { computed, onMounted } from 'vue';
+import Pop from '../utils/Pop';
+import { productsService } from '../services/ProductsService'
+import { AppState } from '../AppState';
+import ProductCard from '../components/ProductCard.vue';
+
 export default {
   setup() {
-    return {
-
+    onMounted(() => {
+      GetAllProducts();
+    });
+    async function GetAllProducts() {
+      try {
+        await productsService.GetAllProducts();
+      }
+      catch (error) {
+        Pop.error(error);
+      }
     }
-  }
+    return {
+      products: computed(() => AppState.products)
+    };
+  },
+  components: { ProductCard }
 }
 </script>
 
