@@ -4,12 +4,14 @@
             <div class="col-12">
                 <section class="row color-txt align-items-center justify-content-between">
                     <div class="col-2">
-                        <p class="fs-3 my-2">
-                            <span>
-                                <i class="mdi mdi-domain"></i>
-                            </span>
-                            Monogram
-                        </p>
+                        <RouterLink :to="{ name: 'Home' }" title="To Home Page">
+                            <p class="fs-3 my-2 color-txt">
+                                <span>
+                                    <i class="mdi mdi-domain"></i>
+                                </span>
+                                Monogram
+                            </p>
+                        </RouterLink>
                     </div>
                     <div class="col-1 text-center">
                         <p class="mb-0">About</p>

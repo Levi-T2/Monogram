@@ -1,13 +1,30 @@
 <template>
     <div class="container-fluid custom-margin">
-        <section class="row justify-content-center">
-            <div class="col-4">
+        <section v-if="product" class="row justify-content-center">
+            <div class="col-12 col-md-5">
                 <img :src="product.imgUrl" alt="Product Image One" class="img-fluid">
+                <section class="row mt-2">
+                    <div v-if="product.imgUrl2" class="col-6">
+                        <img :src="product.imgUrl2" alt="Product Image One" class="img-fluid">
+                    </div>
+                    <div v-if="product.imgUrl3" class="col-6">
+                        <img :src="product.imgUrl3" alt="Product Image One" class="img-fluid">
+                    </div>
+                </section>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-5">
                 <p class="name-style mb-0">{{ product.name }}</p>
                 <p class="price-style">${{ product.price }}</p>
                 <button class="btn btn-primary rounded-pill">Add to Bag</button>
+                <!-- Comp for all accordions on page -->
+                <DetailsAccordion :product="product" />
+            </div>
+            <div class="col-12 col-md-10 mt-4">
+                <!-- Brings in styling and text for the creator app -->
+                <CreatorAppDetails />
+            </div>
+            <div class="col-12 col-md-10 mt-4">
+                <WorkflowInfo />
             </div>
         </section>
     </div>
@@ -20,6 +37,9 @@ import { AppState } from '../AppState';
 import { computed, reactive, onMounted } from 'vue';
 import Pop from '../utils/Pop';
 import { productsService } from '../services/ProductsService';
+import DetailsAccordion from '../components/DetailsAccordion.vue';
+import CreatorAppDetails from '../components/CreatorAppDetails.vue';
+import WorkflowInfo from '../components/WorkflowInfo.vue';
 export default {
     setup() {
         const route = useRoute();
@@ -30,15 +50,17 @@ export default {
             try {
                 const productId = route.params.productId;
                 await productsService.GetProductById(productId);
-            } catch (error) {
+            }
+            catch (error) {
                 Pop.error(error);
             }
         }
         return {
             route,
             product: computed(() => AppState.activeProduct)
-        }
-    }
+        };
+    },
+    components: { DetailsAccordion, CreatorAppDetails, WorkflowInfo }
 };
 </script>
 
