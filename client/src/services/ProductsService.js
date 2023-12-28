@@ -8,6 +8,11 @@ class ProductsService {
         const res = await api.get(`/api/products`);
         AppState.products = res.data.map((product) => new Product(product));
     }
+    async GetProductById(productId) {
+        AppState.activeProduct = null;
+        const res = await api.get(`/api/products/${productId}`);
+        AppState.activeProduct = new Product(res.data);
+    }
 }
 
 export const productsService = new ProductsService()

@@ -35,14 +35,14 @@ INSERT INTO
         price
     )
 VALUES (
-        "Audio Console",
-        "Yep it's a audio console alright",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/Everyday-Bundle-Mocks-final_1920x1281_crop_center.jpg.webp?v=1660013247",
-        "https://cdn.shopify.com/s/files/1/0974/7950/files/Copyof20230521_MonogramCC_CharcoalAudioConsole_05_1920x1280_crop_center.jpg.webp?v=1685456413",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/Consoles_DialBracket1_Monogram_May2020_4575_8bf241a5-911f-4b8e-9c91-daabd19701d7_1920x1280_crop_center.jpg.webp?v=1685456413",
-        499
+        "Video Console",
+        "Expensive but it can do some cool stuff for sure.",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/Consoles_MasterBracket1_Monogram_May2020_4555_1920x1280_crop_center.jpg.webp?v=1668433240",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/Packaging_MasterClosedBracket1_Monogram_May20204494_1920x1280_crop_center.jpg.webp?v=1623682600",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/Consoles_KeysBracket1_Monogram_May2020_4571_7d282185-6761-40f0-9aee-27d4429957ab_1920x1280_crop_center.jpg.webp?v=1668433240",
+        899
     );
 
 DROP TABLE products;
 
-DELETE FROM products WHERE id = 2;
+DELETE FROM products WHERE id = 1;

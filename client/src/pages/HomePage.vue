@@ -7,7 +7,7 @@
         </div>
       </div>
     </section>
-    <section v-if="products.length" class="row mt-3">
+    <section v-if="products.length" class="row mt-3 justify-content-around">
       <div v-for="product in products" :key="product.id" class="col-12 col-md-5">
         <ProductCard :product="product" />
       </div>
