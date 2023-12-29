@@ -46,3 +46,39 @@ VALUES (
 DROP TABLE products;
 
 DELETE FROM products WHERE id = 1;
+
+-- Review Commands
+
+CREATE TABLE
+    IF NOT EXISTS reviews(
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        title VARCHAR(100) NOT NULL,
+        body VARCHAR(5000) NOT NULL,
+        imgUrl VARCHAR(1000),
+        productId INT NOT NULL,
+        FOREIGN KEY (productId) REFERENCES products(id) ON DELETE CASCADE
+    ) default charset utf8;
+
+SELECT * FROM reviews;
+
+INSERT INTO
+    reviews (
+        name,
+        email,
+        title,
+        body,
+        imgUrl,
+        productId
+    )
+VALUES (
+        "Test",
+        "test@msn.com",
+        "My Review",
+        "Loved the product!",
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhappy-man&psig=AOvVaw0SYi-dpejTp9G0zbiRZuFn&ust=1703905305008000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMiHy4bUs4MDFQAAAAAdAAAAABAD",
+        5
+    );
