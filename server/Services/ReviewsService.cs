@@ -15,7 +15,6 @@ public class ReviewsService
         Review review = _repository.CreateReview(reviewData);
         return review;
     }
-
     internal Review GetReviewById(int reviewId)
     {
         Review review = _repository.GetReviewById(reviewId);
@@ -24,5 +23,10 @@ public class ReviewsService
             throw new Exception($"The Id supplied was invalid or null: {reviewId}");
         }
         return review;
+    }
+    internal string DeleteReview(int reviewId)
+    {
+        _repository.DeleteReview(reviewId);
+        return $"The review with the id: {reviewId} has been deleted.";
     }
 }

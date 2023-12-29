@@ -16,7 +16,6 @@ public class ProductsService
         List<Product> productList = _repository.GetAllProducts();
         return productList;
     }
-
     internal Product GetProductById(int productId)
     {
         Product product = _repository.GetProductById(productId);
@@ -28,5 +27,10 @@ public class ProductsService
         {
             return product;
         }
+    }
+    internal List<Review> GetReviewsByProductId(int productId)
+    {
+        List<Review> reviewList = _repository.GetReviewsByProductId(productId);
+        return reviewList;
     }
 }

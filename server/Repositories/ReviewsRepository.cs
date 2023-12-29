@@ -1,5 +1,6 @@
 
 
+
 namespace Monogram.Repositories;
 
 public class ReviewsRepository
@@ -22,11 +23,15 @@ public class ReviewsRepository
         Review review = _db.Query<Review>(sql, reviewData).FirstOrDefault();
         return review;
     }
-
     internal Review GetReviewById(int reviewId)
     {
         string sql = @"SELECT * FROM reviews WHERE id = @reviewId;";
         Review review = _db.Query<Review>(sql, new { reviewId }).FirstOrDefault();
         return review;
+    }
+    internal void DeleteReview(int reviewId)
+    {
+        string sql = @"DELETE FROM reviews WHERE id = @reviewId;";
+        _db.Execute(sql, new { reviewId });
     }
 }

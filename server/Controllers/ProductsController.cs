@@ -42,4 +42,18 @@ public class ProductsController : ControllerBase
             return BadRequest(error.Message);
         }
     }
+
+    [HttpGet("{productId}/reviews")]
+    public ActionResult<List<Review>> GetReviewsByProductId(int productId)
+    {
+        try
+        {
+            List<Review> reviewList = _productsService.GetReviewsByProductId(productId);
+            return Ok(reviewList);
+        }
+        catch (Exception error)
+        {
+            return BadRequest(error.Message);
+        }
+    }
 }

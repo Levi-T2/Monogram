@@ -1,5 +1,6 @@
 
 
+
 namespace Monogram.Repositories;
 
 public class ProductsRepository
@@ -23,5 +24,12 @@ public class ProductsRepository
         string sql = @"SELECT * FROM products WHERE id = @productId;";
         Product product = _db.Query<Product>(sql, new { productId }).FirstOrDefault();
         return product;
+    }
+
+    internal List<Review> GetReviewsByProductId(int productId)
+    {
+        string sql = @"SELECT * FROM reviews WHERE productId = @productId;";
+        List<Review> reviewList = _db.Query<Review>(sql, new { productId }).ToList();
+        return reviewList;
     }
 }

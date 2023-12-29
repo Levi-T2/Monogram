@@ -75,7 +75,7 @@ INSERT INTO
         productId
     )
 VALUES (
-        "Test",
+        "Test 2",
         "test@msn.com",
         "My Review",
         "Loved the product!",
