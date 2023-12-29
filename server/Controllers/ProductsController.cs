@@ -43,6 +43,7 @@ public class ProductsController : ControllerBase
         }
     }
 
+    // Get Reviews By Product Id
     [HttpGet("{productId}/reviews")]
     public ActionResult<List<Review>> GetReviewsByProductId(int productId)
     {

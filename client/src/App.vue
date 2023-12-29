@@ -5,6 +5,9 @@
   <main>
     <router-view />
   </main>
+
+  <!-- MODALS -->
+  <CreateReviewModal />
 </template>
 
 <script>
@@ -12,6 +15,7 @@ import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import Navmenu from './components/Navmenu.vue'
+import CreateReviewModal from './components/CreateReviewModal.vue'
 
 export default {
   setup() {
@@ -19,7 +23,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, Navmenu }
+  components: { Navbar, Navmenu, CreateReviewModal }
 }
 </script>
 <style lang="scss">

@@ -26,6 +26,9 @@
             <div class="col-12 col-md-10 mt-4">
                 <WorkflowInfo />
             </div>
+            <div class="col-12 col-md-10 mt-4">
+                <ReviewSection />
+            </div>
         </section>
     </div>
 </template>
@@ -40,6 +43,7 @@ import { productsService } from '../services/ProductsService';
 import DetailsAccordion from '../components/DetailsAccordion.vue';
 import CreatorAppDetails from '../components/CreatorAppDetails.vue';
 import WorkflowInfo from '../components/WorkflowInfo.vue';
+import ReviewSection from '../components/ReviewSection.vue';
 export default {
     setup() {
         const route = useRoute();
@@ -60,7 +64,7 @@ export default {
             product: computed(() => AppState.activeProduct)
         };
     },
-    components: { DetailsAccordion, CreatorAppDetails, WorkflowInfo }
+    components: { DetailsAccordion, CreatorAppDetails, WorkflowInfo, ReviewSection }
 };
 </script>
 
