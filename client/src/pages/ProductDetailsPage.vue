@@ -15,18 +15,21 @@
             <div class="col-12 col-md-5">
                 <p class="name-style mb-0">{{ product.name }}</p>
                 <p class="price-style">${{ product.price }}</p>
-                <button class="btn btn-primary rounded-pill">Add to Bag</button>
-                <!-- Comp for all accordions on page -->
+                <!-- TODO Brings in button with quantity selector to add to our bag. -->
+                <CheckoutBtn :product="product" />
+                <!-- Comp for all accordions on page. -->
                 <DetailsAccordion :product="product" />
             </div>
             <div class="col-12 col-md-10 mt-4">
-                <!-- Brings in styling and text for the creator app -->
+                <!-- Brings in styling and text for the creator app. -->
                 <CreatorAppDetails />
             </div>
             <div class="col-12 col-md-10 mt-4">
+                <!-- TODO Brings in graphic with link to workflow page. -->
                 <WorkflowInfo />
             </div>
             <div class="col-12 col-md-10 mt-4">
+                <!-- Brings in entire review section + functionality. -->
                 <ReviewSection />
             </div>
         </section>
@@ -44,6 +47,7 @@ import DetailsAccordion from '../components/DetailsAccordion.vue';
 import CreatorAppDetails from '../components/CreatorAppDetails.vue';
 import WorkflowInfo from '../components/WorkflowInfo.vue';
 import ReviewSection from '../components/ReviewSection.vue';
+import CheckoutBtn from '../components/CheckoutBtn.vue';
 export default {
     setup() {
         const route = useRoute();
@@ -64,7 +68,7 @@ export default {
             product: computed(() => AppState.activeProduct)
         };
     },
-    components: { DetailsAccordion, CreatorAppDetails, WorkflowInfo, ReviewSection }
+    components: { DetailsAccordion, CreatorAppDetails, WorkflowInfo, ReviewSection, CheckoutBtn }
 };
 </script>
 

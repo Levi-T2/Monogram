@@ -33,7 +33,8 @@
                         <p class="mb-0">Shop</p>
                     </div>
                     <div class="col-1 text-center">
-                        <i class="fs-3 mdi mdi-basket-outline"></i>
+                        <i title="See Bag" role="button" data-bs-toggle="offcanvas" data-bs-target="#Checkout"
+                            class="fs-3 mdi mdi-basket-outline"></i>
                     </div>
                 </section>
             </div>

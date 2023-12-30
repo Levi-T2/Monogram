@@ -8,6 +8,7 @@
 
   <!-- MODALS -->
   <CreateReviewModal />
+  <CheckoutOffCanvas />
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import Navmenu from './components/Navmenu.vue'
 import CreateReviewModal from './components/CreateReviewModal.vue'
+import CheckoutOffCanvas from './components/CheckoutOffCanvas.vue'
 
 export default {
   setup() {
@@ -23,7 +25,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, Navmenu, CreateReviewModal }
+  components: { Navbar, Navmenu, CreateReviewModal, CheckoutOffCanvas }
 }
 </script>
 <style lang="scss">
