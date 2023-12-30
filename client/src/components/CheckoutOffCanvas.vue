@@ -26,9 +26,10 @@
             </div>
         </div>
         <div class="offcanvas-footer">
-            <p class="mb-4 subtotal-style">Subtotal {{ productPrice }}</p>
+            <!-- <p class="mb-4 subtotal-style">Subtotal {{ subtotal.value }}</p> -->
+            <!-- <p v-else class="mb-4 subtotal-style">Subtotal $0</p> -->
             <div class="text-center">
-                <button class="btn btn-warning btn-checkout rounded-pill">Checkout</button>
+                <button @click="CalculateSubtotal()" class="btn btn-warning btn-checkout rounded-pill">Checkout</button>
             </div>
         </div>
     </div>
@@ -36,13 +37,43 @@
 
 
 <script>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { AppState } from '../AppState';
 
 export default {
     setup() {
+        // const subtotal = ref({ price: 0 });
         return {
+            // subtotal,
             products: computed(() => AppState.bag),
+            // computed: {
+            //     CalculateSubtotal() {
+            //         let productArray = computed(() => AppState.bag)
+            //         productArray.forEach((product) => console.log(product.price))
+            //         // var permission = this.permissions
+            //         // let result = '';
+            //         // for (let i = 0; i < permission.length; i++) {
+            //         //     result += permission[i] + '<br>'
+            //         // }
+            //         // return result;
+            //     }
+            // },
+            CalculateSubtotal() {
+                // NOTE this works, but needs to be done automatically
+                let productArray = this.products
+                let subtotal = 0
+                productArray.forEach((product) => subtotal += product.price)
+                console.log(subtotal)
+                // var permission = this.permissions
+                // let result = '';
+                // for (let i = 0; i < permission.length; i++) {
+                //     result += permission[i] + '<br>'
+                // }
+                // return result;
+            }
+            // test() {
+            //     console.log(subtotal.value.price)
+            // }
         }
     }
 };
