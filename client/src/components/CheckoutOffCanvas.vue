@@ -12,13 +12,15 @@
         <div class="offcanvas-body">
             <div class="container-fluid">
                 <section v-if="products.length" class="row">
-                    <div v-for="product in products" :key="product.id" class="col-12 my-2">
-                        <div class="d-flex">
+                    <div v-for="product in products" :key="product.id" class="col-12 my-2 product-card">
+                        <div class="d-flex justify-content-between">
                             <img :src="product.imgUrl" alt="Product Image" class="img-size">
                             <div class="text-center px-4 pt-3">
-                                <p>{{ product.name }}</p>
-                                <p>${{ product.price }}</p>
+                                <p class="txt">{{ product.name }}</p>
+                                <p class="txt">${{ product.price }}</p>
                             </div>
+                            <button @click="RemoveFromBag(product.id)" title="Remove" class="btn btn-remove"><i
+                                    class="mdi mdi-delete-circle"></i></button>
                         </div>
                     </div>
                 </section>
@@ -42,6 +44,8 @@
 <script>
 import { computed, ref, watch, } from 'vue';
 import { AppState } from '../AppState';
+import Pop from '../utils/Pop';
+import { checkoutService } from '../services/CheckoutService';
 
 export default {
     setup() {
@@ -58,6 +62,18 @@ export default {
         return {
             products: computed(() => AppState.bag),
             subtotal,
+            async RemoveFromBag(productId) {
+                try {
+                    const confirm = await Pop.confirm(`Are you sure you want to remove this from your bag?`);
+                    if (!confirm) {
+                        return;
+                    } else {
+                        checkoutService.RemoveFromBag(productId);
+                    }
+                } catch (error) {
+                    Pop.error(error);
+                }
+            }
         }
     }
 };
@@ -65,12 +81,31 @@ export default {
 
 
 <style lang="scss" scoped>
+.product-card {
+    background-color: rgb(230, 230, 230);
+    border-radius: 3px;
+    padding: 0rem;
+}
+
+.btn-remove {
+    background-color: red;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-bottom-left-radius: 22px;
+}
+
 .img-size {
     height: 6rem;
-    width: 6rem;
+    width: 6.4rem;
     object-position: center;
     object-fit: cover;
-    border-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.txt {
+    font-weight: bold;
+    color: #1a2456;
 }
 
 .btn {
