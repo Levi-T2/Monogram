@@ -1,9 +1,11 @@
 <template>
   <div class="container-fluid">
     <section class="row hero-img">
-      <div class="col-12">
-        <div class="d-flex justify-content-center">
-          <p class="hero-txt mb-0 text-center">A Console For Every Workflow</p>
+      <div class="col-12 d-flex justify-content-center">
+        <div class="hero-txt">
+          <p class="fs-1 fw-bold mb-0 text-center">A Console For Every Workflow
+          <p class="fs-5 text-center">Discover the perfect console for yours.</p>
+          </p>
         </div>
       </div>
     </section>
@@ -15,6 +17,14 @@
     <section v-else class="row mt-3">
       <div class="col-12 col-md-4">
         <p>Loading Products...</p>
+      </div>
+    </section>
+    <section class="row hero-img-2 mt-4">
+      <div class="col-12">
+        <div class="text-center mt-5">
+          <p class="hero-txt-2">Create Your Own Console</p>
+          <p class="color-txt-blue mb-0 fs-5">Add-on to make it perfect</p>
+        </div>
       </div>
     </section>
   </div>
@@ -50,8 +60,16 @@ export default {
 
 <style scoped lang="scss">
 .hero-img {
-  background-image: url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  height: 47.5rem;
+  background-image: url(https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=3271&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  height: 45rem;
+  width: auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-img-2 {
+  background-image: url(https://monogramcc.com/static/fb6b98aa90bbce383e12a09c50936e96/9ee2a/shop-banner-module.webp);
+  height: 40rem;
   width: auto;
   background-position: center;
   background-size: cover;
@@ -59,12 +77,18 @@ export default {
 
 .hero-txt {
   margin-top: 19rem;
-  font-size: 3em;
-  font-weight: bold;
   color: #ff8b68;
-  background-color: rgba(0, 0, 0, 0.415);
+  background-color: rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(14px);
   padding: 0.2rem 2rem 0.2rem;
-  border-radius: 27.5px;
+  border-radius: 10px;
+  width: 100dvh;
+  height: 14dvh;
+}
+
+.hero-txt-2 {
+  font-weight: bold;
+  font-size: 3em;
+  color: #1a2456;
 }
 </style>

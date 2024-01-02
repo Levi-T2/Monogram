@@ -5,6 +5,9 @@
   <main>
     <router-view />
   </main>
+  <footer>
+    <Footer />
+  </footer>
 
   <!-- MODALS -->
   <CreateReviewModal />
@@ -18,6 +21,7 @@ import Navbar from './components/Navbar.vue'
 import Navmenu from './components/Navmenu.vue'
 import CreateReviewModal from './components/CreateReviewModal.vue'
 import CheckoutOffCanvas from './components/CheckoutOffCanvas.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   setup() {
@@ -25,7 +29,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, Navmenu, CreateReviewModal, CheckoutOffCanvas }
+  components: { Navbar, Navmenu, CreateReviewModal, CheckoutOffCanvas, Footer }
 }
 </script>
 <style lang="scss">
@@ -37,5 +41,9 @@ export default {
 
 .color-txt {
   color: #ff8b68;
+}
+
+.color-txt-blue {
+  color: #1a2456;
 }
 </style>

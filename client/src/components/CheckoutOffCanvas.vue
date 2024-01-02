@@ -1,7 +1,11 @@
 <template>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="Checkout" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bag</h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bag
+                <span class="counter">
+                    {{ products.length }}
+                </span>
+            </h5>
             <button title="Close" type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"><i
                     class="mdi mdi-close-circle"></i></button>
         </div>
@@ -41,7 +45,7 @@ import { AppState } from '../AppState';
 
 export default {
     setup() {
-        // SECTION this handles our subtotal display and works perfectly ( i am proud of this )
+        // SECTION this code handles our subtotal display and works perfectly ( i am proud of this )
         const subtotal = ref(0);
         watch(() => AppState.bag.length, () => {
             let productArray = AppState.bag;
@@ -81,6 +85,15 @@ export default {
 
 .btn-checkout {
     font-size: 1em;
+}
+
+.counter {
+    color: #1a2456;
+    background-color: white;
+    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+    border-radius: 25px;
+    font-size: 0.7em;
+    margin-left: 0.35rem;
 }
 
 // CSS bellow effects the built-in styling of our off-canvas

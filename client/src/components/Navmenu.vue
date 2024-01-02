@@ -1,5 +1,5 @@
 <template>
-    <div class="container color-bg mt-2 border nav-position">
+    <div class="container color-bg mt-2 border-corners nav-position">
         <section class="row">
             <div class="col-12">
                 <section class="row color-txt align-items-center justify-content-between">
@@ -30,9 +30,6 @@
                         <p class="mb-0">Support</p>
                     </div>
                     <div class="col-1 text-center">
-                        <p class="mb-0">Shop</p>
-                    </div>
-                    <div class="col-1 text-center">
                         <i title="See Bag" role="button" data-bs-toggle="offcanvas" data-bs-target="#Checkout"
                             class="fs-3 mdi mdi-basket-outline"></i>
                     </div>
@@ -55,7 +52,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.border {
+.border-corners {
     border-radius: 4px;
 }
 
