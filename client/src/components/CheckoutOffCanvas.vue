@@ -19,7 +19,7 @@
                                 <p class="txt">{{ product.name }}</p>
                                 <p class="txt">${{ product.price }}</p>
                             </div>
-                            <button @click="RemoveFromBag(product.id)" title="Remove" class="btn btn-remove"><i
+                            <button @click="RemoveFromBag(product)" title="Remove" class="btn btn-remove"><i
                                     class="mdi mdi-delete-circle"></i></button>
                         </div>
                     </div>
@@ -55,19 +55,21 @@ export default {
             let productArray = AppState.bag;
             let priceOfAll = 0;
             productArray.forEach((product) => priceOfAll += product.price);
-            subtotal.value += priceOfAll;
-            console.log(subtotal.value);
+            subtotal.value = priceOfAll;
+            // console.log(subtotal.value);
         });
         // !SECTION
         return {
             products: computed(() => AppState.bag),
             subtotal,
-            async RemoveFromBag(productId) {
+            async RemoveFromBag(product) {
                 try {
                     const confirm = await Pop.confirm(`Are you sure you want to remove this from your bag?`);
                     if (!confirm) {
                         return;
                     } else {
+                        subtotal.value -= product.price;
+                        const productId = product.id;
                         checkoutService.RemoveFromBag(productId);
                     }
                 } catch (error) {
