@@ -11,4 +11,5 @@ public class Product
     public string ImgUrl { get; set; }
     public string ImgUrl2 { get; set; }
     public string ImgUrl3 { get; set; }
+    public string Category { get; set; }
 }

@@ -11,7 +11,10 @@
     </section>
     <section v-if="products.length" class="row mt-3 justify-content-around">
       <div v-for="product in products" :key="product.id" class="col-12 col-md-5">
-        <ProductCard :product="product" />
+        <!-- NOTE I'm not sure if this is the best way to this. If I get a chance I'll ask Jerms.-->
+        <div v-if="product.category == 'console'">
+          <ProductCard :product="product" />
+        </div>
       </div>
     </section>
     <section v-else class="row mt-3">
@@ -24,6 +27,13 @@
         <div class="text-center mt-5">
           <p class="hero-txt-2">Create Your Own Console</p>
           <p class="color-txt-blue mb-0 fs-5">Add-on to make it perfect</p>
+        </div>
+      </div>
+    </section>
+    <section v-if="products.length" class="row mt-3 justify-content-around">
+      <div v-for="product in products" :key="product.id" class="col-12 col-md-5">
+        <div v-if="product.category == 'component'">
+          <ProductCard :product="product" />
         </div>
       </div>
     </section>

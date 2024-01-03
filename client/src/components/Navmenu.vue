@@ -17,8 +17,26 @@
                         <p class="mb-0">About</p>
                     </div>
                     <div class="col-1 text-center">
-                        <!-- TODO Make this dropdown with its required items -->
-                        <p class="mb-0">Workflows</p>
+                        <div class="dropdown">
+                            <button id="workflow-dropdown" class="btn dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Workflows
+                            </button>
+                            <ul class="dropdown-menu">
+                                <RouterLink :to="{ name: 'Workflows', params: { productName: `audio` } }">
+                                    <li><a class="dropdown-item">Audio Console</a></li>
+                                </RouterLink>
+                                <RouterLink :to="{ name: 'Workflows', params: { productName: `photo` } }">
+                                    <li><a class="dropdown-item">Photo Console</a></li>
+                                </RouterLink>
+                                <RouterLink :to="{ name: 'Workflows', params: { productName: `video` } }">
+                                    <li><a class="dropdown-item">Video Console</a></li>
+                                </RouterLink>
+                                <RouterLink :to="{ name: 'Workflows', params: { productName: `mini` } }">
+                                    <li><a class="dropdown-item">Mini Console</a></li>
+                                </RouterLink>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-1 text-center">
                         <p class="mb-0">Download</p>
@@ -52,6 +70,22 @@ export default {
 
 
 <style lang="scss" scoped>
+// SECTION This CSS effects the built in properties of bootstraps dropdown.
+
+#workflow-dropdown {
+    color: #ff8b68;
+}
+
+.dropdown-menu {
+    background-color: #1a2456;
+}
+
+.dropdown-item {
+    color: #ff8b68;
+}
+
+// !SECTION
+
 .border-corners {
     border-radius: 4px;
 }

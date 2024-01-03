@@ -21,6 +21,11 @@ const routes = [
     name: 'Details',
     component: loadPage('ProductDetailsPage')
   },
+  {
+    path: '/workflows/:productName',
+    name: 'Workflows',
+    component: loadPage('WorkflowPage')
+  },
   // Unused Paths
   // {
   //   path: '/account',

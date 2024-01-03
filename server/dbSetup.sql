@@ -32,20 +32,32 @@ INSERT INTO
         imgUrl,
         imgUrl2,
         imgUrl3,
-        price
+        price,
+        category
     )
 VALUES (
-        "Video Console",
-        "Expensive but it can do some cool stuff for sure.",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/Consoles_MasterBracket1_Monogram_May2020_4555_1920x1280_crop_center.jpg.webp?v=1668433240",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/Packaging_MasterClosedBracket1_Monogram_May20204494_1920x1280_crop_center.jpg.webp?v=1623682600",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/Consoles_KeysBracket1_Monogram_May2020_4571_7d282185-6761-40f0-9aee-27d4429957ab_1920x1280_crop_center.jpg.webp?v=1668433240",
-        899
+        "Monogram Carrying Case",
+        "Safety first, that is what this carry case is all about, so that you can securely take your Monogram console with you in a convenient, backpack ready case. Take your entire Monogram console or just a subset of individual modules with you on your travels, so you can edit effectively on the road, with the peace of mind that your console is safe and secure.",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/20221018_MonogramCC_Case_06_1920x1280_crop_center.jpg.webp?v=1666726898",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/20221018_MonogramCC_Case_02_1920x1280_crop_center.jpg.webp?v=1666799808",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/20221018_MonogramCC_Case_03_1920x1280_crop_center.jpg.webp?v=1666799808",
+        59,
+        "component"
     );
 
 DROP TABLE products;
 
-DELETE FROM products WHERE id = 1;
+DELETE FROM products WHERE id = 11;
+
+ALTER TABLE products
+ADD
+    category ENUM(
+        'console',
+        'component',
+        'other'
+    );
+
+UPDATE products SET category = "console" WHERE id = 5;
 
 -- Review Commands
 

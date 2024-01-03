@@ -7,7 +7,7 @@
                 <p class="name-style mb-0">{{ product.name }}</p>
                 <p class="price-style mb-0">$ {{ product.price }}</p>
             </div>
-            <div class="mt-2">
+            <div v-if="product.category == 'console'" class="mt-2">
                 <p class="mb-0">{{ product.description }}</p>
             </div>
         </router-link>
@@ -18,7 +18,7 @@
                 <p class="name-style mb-0">{{ product.name }}</p>
                 <p class="btn-shop mb-0">Shop Now</p>
             </div>
-            <div class="mt-2">
+            <div v-if="product.category == 'console'" class="mt-2">
                 <p class="mb-0">{{ product.description }}</p>
             </div>
         </router-link>
