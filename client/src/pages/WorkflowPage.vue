@@ -5,32 +5,34 @@
                 <WorkflowBanner />
             </div>
         </section>
-        <section class="row my-3">
+        <section class="row mt-4 mb-5">
             <div class="col-12">
                 <WorkflowSelector />
             </div>
         </section>
-        <section v-if="route.path == '/workflows/audio'" class="row">
-            audio
+        <section v-if="route.path == '/workflows/audio'" class="mt-4">
+            <AudioWorkflow />
         </section>
-        <section v-if="route.path == '/workflows/photo'" class="row">
-            photo
+        <section v-if="route.path == '/workflows/photo'" class="mt-4">
+            <PhotoWorkflow />
         </section>
-        <section v-if="route.path == '/workflows/video'" class="row">
-            video
+        <section v-if="route.path == '/workflows/video'" class="mt-4">
+            <VideoWorkflow />
         </section>
-        <section v-if="route.path == '/workflows/mini'" class="row">
-            mini
+        <section v-if="route.path == '/workflows/mini'" class="mt-4">
+            <MiniWorkflow />
         </section>
     </div>
 </template>
 
 
 <script>
-import { AppState } from '../AppState';
-import { computed, reactive, onMounted } from 'vue';
 import WorkflowBanner from '../components/WorkflowBanner.vue';
 import WorkflowSelector from '../components/WorkflowSelector.vue';
+import AudioWorkflow from '../components/AudioWorkflow.vue';
+import PhotoWorkflow from '../components/PhotoWorkflow.vue';
+import VideoWorkflow from '../components/VideoWorkflow.vue';
+import MiniWorkflow from '../components/MiniWorkflow.vue';
 import { useRoute } from 'vue-router';
 export default {
     setup() {
@@ -39,7 +41,7 @@ export default {
             route,
         };
     },
-    components: { WorkflowBanner, WorkflowSelector }
+    components: { WorkflowBanner, WorkflowSelector, AudioWorkflow, PhotoWorkflow, VideoWorkflow, MiniWorkflow }
 };
 </script>
 
