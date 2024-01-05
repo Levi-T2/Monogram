@@ -1,4 +1,4 @@
--- Active: 1702941772316@@54.213.241.121@3306@monogram
+-- Active: 1702941772316@@54.188.124.71@3306@monogram
 -- CREATE TABLE IF NOT EXISTS accounts(
 --   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
 -- createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',

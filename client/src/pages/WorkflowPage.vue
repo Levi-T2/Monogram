@@ -34,6 +34,7 @@ import PhotoWorkflow from '../components/PhotoWorkflow.vue';
 import VideoWorkflow from '../components/VideoWorkflow.vue';
 import MiniWorkflow from '../components/MiniWorkflow.vue';
 import { useRoute } from 'vue-router';
+
 export default {
     setup() {
         const route = useRoute();

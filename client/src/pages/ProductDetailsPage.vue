@@ -15,7 +15,7 @@
             <div class="col-12 col-md-5">
                 <p class="name-style mb-0">{{ product.name }}</p>
                 <p class="price-style">${{ product.price }}</p>
-                <!-- TODO Brings in button with quantity selector to add to our bag. -->
+                <!-- Brings in button with quantity selector to add to our bag. -->
                 <CheckoutBtn :product="product" />
                 <!-- Comp for all accordions on page. -->
                 <DetailsAccordion :product="product" />
