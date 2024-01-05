@@ -4,14 +4,17 @@
             <a v-if="route.path == '/workflows/audio'" role="button" class="active-page">Audio Console</a>
             <a v-else role="button">Audio Console</a>
         </RouterLink>
+        <p class="mb-0 fs-2">|</p>
         <RouterLink class="txt" :to="{ name: 'Workflows', params: { productName: `photo` } }">
             <a v-if="route.path == '/workflows/photo'" role="button" class="active-page">Photo Console</a>
             <a v-else role="button">Photo Console</a>
         </RouterLink>
+        <p class="mb-0 fs-2">|</p>
         <RouterLink class="txt" :to="{ name: 'Workflows', params: { productName: `video` } }">
             <a v-if="route.path == '/workflows/video'" role="button" class="active-page">Video Console</a>
             <a v-else role="button">Video Console</a>
         </RouterLink>
+        <p class="mb-0 fs-2">|</p>
         <RouterLink class="txt" :to="{ name: 'Workflows', params: { productName: `mini` } }">
             <a v-if="route.path == '/workflows/mini'" role="button" class="active-page">Mini Console</a>
             <a v-else role="button">Mini Console</a>

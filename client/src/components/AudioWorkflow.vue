@@ -1,6 +1,6 @@
 <template>
     <section class="row bg-cus justify-content-center mb-5">
-        <div class="col-5 mt-5">
+        <div class="col-5 pt-5">
             <p class="top-txt">The Human Touch to Composition</p>
             <p class="mb-0 bot-txt fs-5">Add dynamic expression and a tactile experience to your digital music
                 composition
@@ -56,7 +56,7 @@
                 alt="Audio Graphic" class="img-fluid">
         </div>
     </section>
-    <section class="row">
+    <section class="row pt-2">
         <div v-if="product" class="col-12">
             <ProductWorkflowCard :product="product" />
         </div>
@@ -109,8 +109,8 @@ export default {
 
 .bot-txt {
     color: #1a2456;
+    font-size: 1.15em;
 }
-
 
 .bg-cus {
     background-color: rgb(228, 192, 8);
@@ -120,9 +120,9 @@ export default {
 
 .img-style {
     position: absolute;
-    height: 30rem;
+    height: 34rem;
     width: auto;
     margin-left: 4rem;
-    top: -100px;
+    top: -120px;
 }
 </style>

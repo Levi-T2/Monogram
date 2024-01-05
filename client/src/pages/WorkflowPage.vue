@@ -10,16 +10,16 @@
                 <WorkflowSelector />
             </div>
         </section>
-        <section v-if="route.path == '/workflows/audio'" class="mt-4">
+        <section v-if="route.path == '/workflows/audio'" class="mt-5">
             <AudioWorkflow />
         </section>
-        <section v-if="route.path == '/workflows/photo'" class="mt-4">
+        <section v-if="route.path == '/workflows/photo'" class="mt-5">
             <PhotoWorkflow />
         </section>
-        <section v-if="route.path == '/workflows/video'" class="mt-4">
+        <section v-if="route.path == '/workflows/video'" class="mt-5">
             <VideoWorkflow />
         </section>
-        <section v-if="route.path == '/workflows/mini'" class="mt-4">
+        <section v-if="route.path == '/workflows/mini'" class="mt-5">
             <MiniWorkflow />
         </section>
     </div>
