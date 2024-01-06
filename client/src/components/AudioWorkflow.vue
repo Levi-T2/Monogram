@@ -114,15 +114,16 @@ export default {
 
 .bg-cus {
     background-color: rgb(228, 192, 8);
-    height: 19rem;
+    height: 18rem;
     position: relative;
+    margin-top: 5rem;
 }
 
 .img-style {
     position: absolute;
-    height: 34rem;
+    height: 27rem;
     width: auto;
     margin-left: 4rem;
-    top: -120px;
+    top: -86px;
 }
 </style>

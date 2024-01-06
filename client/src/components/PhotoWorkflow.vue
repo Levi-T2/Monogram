@@ -181,7 +181,6 @@ export default {
             ContentSwitch(selector) {
                 frame.value = "";
                 frame.value = selector;
-                console.log(frame.value)
             },
         };
     },
@@ -212,15 +211,18 @@ export default {
     background-color: rgb(247, 156, 107);
     height: 19rem;
     position: relative;
+    margin-top: 5rem;
 }
 
 .img-style {
     position: absolute;
-    height: 30rem;
+    height: 28rem;
     width: auto;
     margin-left: 4rem;
-    top: -90px;
+    top: -80px;
 }
+
+// SECTION This CSS holds the styling for the software selector for photo applications
 
 .active-switch {
     transform: translateY(0.8em);
@@ -247,4 +249,6 @@ export default {
     color: #1a2456;
     font-weight: bold;
 }
+
+// !SECTION
 </style>
