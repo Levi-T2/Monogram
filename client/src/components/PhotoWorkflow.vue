@@ -15,7 +15,7 @@
     </section>
     <section class="row justify-content-around align-items-center switch-holder mb-5">
         <div class="col-3">
-            <p class="mb-0 text-center switch-txt">Software Integrations</p>
+            <p class="mb-0 text-center switch-txt">Integrations</p>
         </div>
         <div class="col-6 d-flex justify-content-center">
             <div class="px-3">
