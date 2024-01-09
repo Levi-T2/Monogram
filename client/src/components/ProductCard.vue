@@ -13,7 +13,8 @@
         </router-link>
         <router-link @mouseleave="active = false" v-else class="text-dark"
             :to="{ name: 'Details', params: { productId: product.id } }">
-            <img :src="product.imgUrl2" alt="Product Image" class="img-size">
+            <img v-if="product.imgUrl2" :src="product.imgUrl2" alt="Product Image" class="img-size">
+            <img v-else :src="product.imgUrl" alt="Product Image" class="img-size">
             <div class="d-flex justify-content-between align-items-baseline  pt-2">
                 <p class="name-style mb-0">{{ product.name }}</p>
                 <p class="btn-shop mb-0">Shop Now</p>

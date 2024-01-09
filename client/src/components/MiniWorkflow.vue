@@ -163,17 +163,41 @@
     <section class="row review-bg justify-content-center">
         <WorkflowTestimonials />
     </section>
+    <section class="row">
+        <div v-if="product" class="col-12">
+            <ProductWorkflowCard :product="product" />
+        </div>
+    </section>
+    <section class="row justify-content-center">
+        <WorkflowApps />
+    </section>
 </template>
 
 
 <script>
 import { AppState } from '../AppState';
-import { computed, reactive, onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import WorkflowTestimonials from './WorkflowTestimonials.vue';
+import Pop from '../utils/Pop';
+import { productsService } from '../services/ProductsService';
+import ProductWorkflowCard from './ProductWorkflowCard.vue';
+import WorkflowApps from './WorkflowApps.vue';
 export default {
     setup() {
         const frame = ref("Zoom");
         const selector = ["Zoom", "Spotify", "Chrome", "Teams", "Music", "Safari"];
+        onMounted(() => {
+            GetMiniConsole();
+        });
+        async function GetMiniConsole() {
+            try {
+                const productId = 2;
+                await productsService.GetProductById(productId);
+            }
+            catch (error) {
+                Pop.error(error);
+            }
+        }
         return {
             frame,
             selector,
@@ -181,9 +205,10 @@ export default {
                 frame.value = "";
                 frame.value = selector;
             },
+            product: computed(() => AppState.activeProduct),
         };
     },
-    components: { WorkflowTestimonials }
+    components: { WorkflowTestimonials, ProductWorkflowCard, WorkflowApps }
 };
 </script>
 

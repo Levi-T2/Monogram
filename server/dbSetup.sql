@@ -30,19 +30,15 @@ INSERT INTO
         name,
         description,
         imgUrl,
-        imgUrl2,
-        imgUrl3,
         price,
         category
     )
 VALUES (
-        "Monogram Carrying Case",
-        "Safety first, that is what this carry case is all about, so that you can securely take your Monogram console with you in a convenient, backpack ready case. Take your entire Monogram console or just a subset of individual modules with you on your travels, so you can edit effectively on the road, with the peace of mind that your console is safe and secure.",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/20221018_MonogramCC_Case_06_1920x1280_crop_center.jpg.webp?v=1666726898",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/20221018_MonogramCC_Case_02_1920x1280_crop_center.jpg.webp?v=1666799808",
-        "https://cdn.shopify.com/s/files/1/0974/7950/products/20221018_MonogramCC_Case_03_1920x1280_crop_center.jpg.webp?v=1666799808",
-        59,
-        "component"
+        "Console Pack: Video",
+        "Add an entirely new category of abilities to your Console. 4 high-performance plugins developed by Monogram in collaboration with Adobe. Built with deep API integrations, achieving speed, reliability and functionality that are otherwise impossible with shortcuts alone.",
+        "https://cdn.shopify.com/s/files/1/0974/7950/products/SW-box-render-mini-video-final-august_750x540_crop_center.jpg?v=1661441054",
+        69,
+        "pack"
     );
 
 DROP TABLE products;
@@ -57,7 +53,18 @@ ADD
         'other'
     );
 
-UPDATE products SET category = "console" WHERE id = 5;
+ALTER TABLE
+    products MODIFY COLUMN category ENUM(
+        'console',
+        'component',
+        'pack',
+        'other'
+    );
+
+UPDATE products
+SET
+    imgUrl = "https://cdn.shopify.com/s/files/1/0974/7950/products/SW-box-render-mini-midi-final-august_1920x1382_crop_center.jpg.webp?v=1661440892"
+WHERE id = 15;
 
 -- Review Commands
 

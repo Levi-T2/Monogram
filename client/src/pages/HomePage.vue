@@ -37,6 +37,14 @@
         </div>
       </div>
     </section>
+    <section v-if="products.length" class="row mt-3 justify-content-around">
+      <AddOnSeparator />
+      <div v-for="product in products" :key="product.id" class="col-12 col-md-5 mt-1">
+        <div v-if="product.category == 'pack'">
+          <ProductCard :product="product" />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -46,6 +54,7 @@ import Pop from '../utils/Pop';
 import { productsService } from '../services/ProductsService'
 import { AppState } from '../AppState';
 import ProductCard from '../components/ProductCard.vue';
+import AddOnSeparator from '../components/AddOnSeparator.vue';
 
 export default {
   setup() {
@@ -64,7 +73,7 @@ export default {
       products: computed(() => AppState.products)
     };
   },
-  components: { ProductCard }
+  components: { ProductCard, AddOnSeparator }
 }
 </script>
 
@@ -79,7 +88,7 @@ export default {
 
 .hero-img-2 {
   background-image: url(https://monogramcc.com/static/fb6b98aa90bbce383e12a09c50936e96/9ee2a/shop-banner-module.webp);
-  height: 40rem;
+  height: 36rem;
   width: auto;
   background-position: center;
   background-size: cover;
