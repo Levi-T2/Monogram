@@ -5,7 +5,10 @@
   <main>
     <router-view />
   </main>
-  <footer>
+  <footer v-if="route.name == 'Support'">
+
+  </footer>
+  <footer v-else>
     <Footer />
   </footer>
 
@@ -22,11 +25,14 @@ import Navmenu from './components/Navmenu.vue'
 import CreateReviewModal from './components/CreateReviewModal.vue'
 import CheckoutOffCanvas from './components/CheckoutOffCanvas.vue'
 import Footer from './components/Footer.vue'
+import { useRoute } from 'vue-router'
 
 export default {
   setup() {
+    const route = useRoute();
     return {
-      appState: computed(() => AppState)
+      appState: computed(() => AppState),
+      route
     }
   },
   components: { Navbar, Navmenu, CreateReviewModal, CheckoutOffCanvas, Footer }

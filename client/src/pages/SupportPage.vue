@@ -5,7 +5,7 @@
                 <h1 class="hero-txt-bg">Welcome to Monogram Support</h1>
             </div>
         </section>
-        <section class="row my-4 justify-content-around g-3">
+        <section class="row mt-4 mb-5 justify-content-around g-3">
             <div class="col-12 col-md-3 card-style">
                 <h4 class="py-3">Getting Started</h4>
                 <p>Get started by setting up your Monogram Creative Console</p>
@@ -26,6 +26,13 @@
             <div class="col-12 col-md-5 card-style">
                 <h4 class="py-3">FAQ</h4>
                 <p>FAQ's about Hardware, Software, and Shipping & Delivery</p>
+            </div>
+        </section>
+        <section class="row my-4">
+            <div class="col-12 px-4">
+                <h4>Contact Us</h4>
+                <p>Can't find what you're looking for? Get in touch with our customer support team.</p>
+                <button class="btn btn-primary">Submit a request</button>
             </div>
         </section>
     </div>

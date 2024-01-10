@@ -3,7 +3,7 @@
         <section class="row">
             <div class="col-12">
                 <section class="row color-txt align-items-center justify-content-between">
-                    <div class="col-4">
+                    <div class="col-5">
                         <RouterLink :to="{ name: 'Home' }" title="To Home Page">
                             <p class="fs-3 my-2 color-txt monogram-txt">
                                 <span>
@@ -13,19 +13,16 @@
                             </p>
                         </RouterLink>
                     </div>
-                    <div class="col-1 text-center">
-                        <p class="mb-0">About</p>
+                    <div class="col-1 text-center p-0">
+                        <RouterLink :to="{ name: 'Info' }">
+                            <p class="mb-0 color-txt">How it works</p>
+                        </RouterLink>
                     </div>
-                    <div class="col-2 text-center">
+                    <div class="col-1 text-center p-0">
                         <div class="dropdown">
-                            <button id="workflow-dropdown" class="btn" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <p class="mb-0">
-                                    Workflows
-                                    <span>
-                                        <i class="mdi mdi-menu-down"></i>
-                                    </span>
-                                </p>
+                            <button title="To Workflow Page" class="btn dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Workflows
                             </button>
                             <ul class="dropdown-menu">
                                 <RouterLink :to="{ name: 'Workflows', params: { productName: `audio` } }">
@@ -43,13 +40,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-1 text-center">
+                    <div class="col-1 text-center p-0">
                         <p class="mb-0">Download</p>
                     </div>
-                    <div class="col-1 text-center">
+                    <div class="col-1 text-center p-0">
                         <p class="mb-0">Blog</p>
                     </div>
-                    <div class="col-1 text-center">
+                    <div class="col-1 text-center p-0">
                         <RouterLink :to="{ name: 'Support' }" title="To Support Page">
                             <p class="mb-0 color-txt">Support</p>
                         </RouterLink>
@@ -79,7 +76,7 @@ export default {
 <style lang="scss" scoped>
 // SECTION This CSS effects the built in properties of bootstraps dropdown.
 
-#workflow-dropdown {
+.dropdown-toggle {
     color: #ff8b68;
 }
 

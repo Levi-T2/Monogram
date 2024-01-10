@@ -31,6 +31,11 @@ const routes = [
     name: 'Support',
     component: loadPage('SupportPage')
   },
+  {
+    path: '/info',
+    name: 'Info',
+    component: loadPage('InfoPage')
+  },
   // Unused Paths
   // {
   //   path: '/account',
