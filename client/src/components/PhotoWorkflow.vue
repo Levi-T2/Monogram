@@ -150,6 +150,8 @@
             <ProductWorkflowCard :product="product" />
         </div>
     </section>
+    <!-- NOTE This card brings in everything need for it. (Except the prop obv.) -->
+    <PackWorkflowCard v-if="pack" :pack="pack" />
 </template>
 
 
@@ -159,12 +161,14 @@ import { computed, onMounted, ref } from 'vue';
 import ProductWorkflowCard from './ProductWorkflowCard.vue';
 import Pop from '../utils/Pop';
 import { productsService } from '../services/ProductsService';
+import PackWorkflowCard from './PackWorkflowCard.vue';
 export default {
     setup() {
         const frame = ref("Lightroom")
         const selector = ["Lightroom", "Photoshop", "Capture"]
         onMounted(() => {
             GetPhotoConsole();
+            GetPhotoPack();
         })
         async function GetPhotoConsole() {
             try {
@@ -173,18 +177,27 @@ export default {
             } catch (error) {
                 Pop.error(error);
             }
+        };
+        async function GetPhotoPack() {
+            try {
+                const packId = 16;
+                await productsService.GetPackById(packId);
+            } catch (error) {
+                Pop.error(error);
+            }
         }
         return {
             selector,
             frame,
             product: computed(() => AppState.activeProduct),
+            pack: computed(() => AppState.activeAddOn),
             ContentSwitch(selector) {
                 frame.value = "";
                 frame.value = selector;
             },
         };
     },
-    components: { ProductWorkflowCard }
+    components: { ProductWorkflowCard, PackWorkflowCard }
 };
 </script>
 

@@ -95,6 +95,8 @@
             <ProductWorkflowCard :product="product" />
         </div>
     </section>
+    <!-- NOTE This card brings in everything need for it. (Except the prop obv.) -->
+    <PackWorkflowCard v-if="pack" :pack="pack" />
 </template>
 
 <script>
@@ -103,12 +105,14 @@ import Pop from '../utils/Pop';
 import { productsService } from '../services/ProductsService';
 import { AppState } from '../AppState';
 import ProductWorkflowCard from './ProductWorkflowCard.vue';
+import PackWorkflowCard from './PackWorkflowCard.vue';
 export default {
     setup() {
         const frame = ref("Premier Pro");
         const selector = ["Premier Pro", "Final Cut"];
         onMounted(() => {
             GetVideoConsole();
+            GetVideoPack();
         });
         async function GetVideoConsole() {
             try {
@@ -118,18 +122,27 @@ export default {
             catch (error) {
                 Pop.error(error);
             }
+        };
+        async function GetVideoPack() {
+            try {
+                const packId = 17;
+                await productsService.GetPackById(packId);
+            } catch (error) {
+                Pop.error(error);
+            }
         }
         return {
             frame,
             selector,
             product: computed(() => AppState.activeProduct),
+            pack: computed(() => AppState.activeAddOn),
             ContentSwitch(selector) {
                 frame.value = "";
                 frame.value = selector;
             },
         };
     },
-    components: { ProductWorkflowCard }
+    components: { ProductWorkflowCard, PackWorkflowCard }
 };
 </script>
 

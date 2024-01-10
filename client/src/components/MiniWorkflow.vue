@@ -171,6 +171,8 @@
     <section class="row justify-content-center">
         <WorkflowApps />
     </section>
+    <!-- NOTE Since the mini console has no pack, I have made a comp. that brings in the other packs to purchase. -->
+    <AllPacksCard />
 </template>
 
 
@@ -182,6 +184,7 @@ import Pop from '../utils/Pop';
 import { productsService } from '../services/ProductsService';
 import ProductWorkflowCard from './ProductWorkflowCard.vue';
 import WorkflowApps from './WorkflowApps.vue';
+import AllPacksCard from './AllPacksCard.vue';
 export default {
     setup() {
         const frame = ref("Zoom");
@@ -208,7 +211,7 @@ export default {
             product: computed(() => AppState.activeProduct),
         };
     },
-    components: { WorkflowTestimonials, ProductWorkflowCard, WorkflowApps }
+    components: { WorkflowTestimonials, ProductWorkflowCard, WorkflowApps, AllPacksCard }
 };
 </script>
 

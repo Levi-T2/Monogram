@@ -10,6 +10,8 @@ export const AppState = reactive({
 
   activeProduct: null,
 
+  activeAddOn: null,
+
   reviews: [],
 
   bag: []

@@ -61,6 +61,8 @@
             <ProductWorkflowCard :product="product" />
         </div>
     </section>
+    <!-- NOTE This card brings in everything need for it. (Except the prop obv.) -->
+    <PackWorkflowCard v-if="pack" :pack="pack" />
 </template>
 
 
@@ -70,12 +72,14 @@ import { computed, reactive, onMounted } from 'vue';
 import Pop from '../utils/Pop';
 import { productsService } from '../services/ProductsService';
 import ProductWorkflowCard from './ProductWorkflowCard.vue';
+import PackWorkflowCard from './PackWorkflowCard.vue';
 export default {
     setup() {
         onMounted(() => {
             GetAudioConsole();
+            GetAudioPack();
         });
-        // NOTE I would like to make this a better function, but as of right now I'm not quite sure how to.
+        // NOTE I would like to make both of these a better function, but as of right now I'm not quite sure how to.
         async function GetAudioConsole() {
             try {
                 const productId = 3;
@@ -84,12 +88,21 @@ export default {
             catch (error) {
                 Pop.error(error);
             }
+        };
+        async function GetAudioPack() {
+            try {
+                const packId = 15;
+                await productsService.GetPackById(packId);
+            } catch (error) {
+                Pop.error(error);
+            }
         }
         return {
             product: computed(() => AppState.activeProduct),
+            pack: computed(() => AppState.activeAddOn)
         };
     },
-    components: { ProductWorkflowCard }
+    components: { ProductWorkflowCard, PackWorkflowCard }
 };
 </script>
 
@@ -111,6 +124,7 @@ export default {
     color: #1a2456;
     font-size: 1.15em;
 }
+
 
 .bg-cus {
     background-color: rgb(228, 192, 8);
