@@ -25,6 +25,8 @@ CREATE TABLE
 
 SELECT * FROM products;
 
+SELECT * FROM products WHERE category = 'pack';
+
 INSERT INTO
     products (
         name,

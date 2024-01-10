@@ -57,4 +57,19 @@ public class ProductsController : ControllerBase
             return BadRequest(error.Message);
         }
     }
+
+    // Get all add-on packs
+    [HttpGet("packs")]
+    public ActionResult<List<Product>> GetAllPacks()
+    {
+        try
+        {
+            List<Product> packList = _productsService.GetAllPacks();
+            return Ok(packList);
+        }
+        catch (Exception error)
+        {
+            return BadRequest(error.Message);
+        }
+    }
 }
