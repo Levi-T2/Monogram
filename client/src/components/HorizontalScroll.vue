@@ -61,20 +61,20 @@ export default {
         return {
             AddHorizontalScroll() {
                 const container = document.getElementById("scroll-container");
-                // where "container" is the id of the container
+                // ^^ This is needed to grab the element to target with our scroll.
                 container.addEventListener("wheel", function (e) {
+                    // NOTE e is our wheel event; basically our scroll wheel
                     if (e.deltaY > 0) {
                         container.scrollLeft += 57.5;
+                        // This numbers can be changed to set how fast the scroll is.
                         e.preventDefault();
-                        // preventDefault() will help avoid worrisome 
-                        // inclusion of vertical scroll 
+                        // NOTE Prevent default is used to make sure scrolling of the y-axis doesn't occur when x-scrolling is on.
                     }
                     else {
                         container.scrollLeft -= 57.5;
                         e.preventDefault();
                     }
                 });
-                // That will work perfectly
             }
         }
     }
