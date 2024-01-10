@@ -12,6 +12,8 @@ export const AppState = reactive({
 
   activeAddOn: null,
 
+  packs: [],
+
   reviews: [],
 
   bag: []

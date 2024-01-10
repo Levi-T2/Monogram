@@ -3,24 +3,29 @@
         <section class="row">
             <div class="col-12">
                 <section class="row color-txt align-items-center justify-content-between">
-                    <div class="col-2">
+                    <div class="col-4">
                         <RouterLink :to="{ name: 'Home' }" title="To Home Page">
-                            <p class="fs-3 my-2 color-txt">
+                            <p class="fs-3 my-2 color-txt monogram-txt">
                                 <span>
                                     <i class="mdi mdi-domain"></i>
                                 </span>
-                                Monogram
+                                MONOGRAM
                             </p>
                         </RouterLink>
                     </div>
                     <div class="col-1 text-center">
                         <p class="mb-0">About</p>
                     </div>
-                    <div class="col-1 text-center">
+                    <div class="col-2 text-center">
                         <div class="dropdown">
-                            <button id="workflow-dropdown" class="btn dropdown-toggle" type="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Workflows
+                            <button id="workflow-dropdown" class="btn" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <p class="mb-0">
+                                    Workflows
+                                    <span>
+                                        <i class="mdi mdi-menu-down"></i>
+                                    </span>
+                                </p>
                             </button>
                             <ul class="dropdown-menu">
                                 <RouterLink :to="{ name: 'Workflows', params: { productName: `audio` } }">
@@ -45,11 +50,13 @@
                         <p class="mb-0">Blog</p>
                     </div>
                     <div class="col-1 text-center">
-                        <p class="mb-0">Support</p>
+                        <RouterLink :to="{ name: 'Support' }" title="To Support Page">
+                            <p class="mb-0 color-txt">Support</p>
+                        </RouterLink>
                     </div>
                     <div class="col-1 text-center">
                         <i title="See Bag" role="button" data-bs-toggle="offcanvas" data-bs-target="#Checkout"
-                            class="fs-3 mdi mdi-basket-outline"></i>
+                            class="fs-3 mdi mdi-basket-outline btn-bag"></i>
                     </div>
                 </section>
             </div>
@@ -92,5 +99,16 @@ export default {
 
 .nav-position {
     position: absolute;
+}
+
+.btn-bag {
+    padding: 0.15rem 0.3rem 0.15rem 0.3rem;
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    transition: ease-in-out 0.225s;
+    border-radius: 3px;
+}
+
+.btn-bag:hover {
+    border: 1.5px solid gainsboro;
 }
 </style>

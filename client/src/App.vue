@@ -46,4 +46,8 @@ export default {
 .color-txt-blue {
   color: #1a2456;
 }
+
+.monogram-txt {
+  font-family: 'Audiowide', sans-serif;
+}
 </style>

@@ -19,6 +19,17 @@ class ProductsService {
         const res = await api.get(`/api/products/${packId}`);
         AppState.activeAddOn = new Product(res.data);
     }
+    // NOTE This was made in the back end to grab products by their category, in this case packs.
+    async GetAllPacks() {
+        // NOTE This is done to minimize request to the network
+        if (AppState.packs.length) {
+            return
+        } else {
+            AppState.packs = [];
+            const res = await api.get(`/api/products/packs`);
+            AppState.packs = res.data.map((pack) => new Product(pack));
+        }
+    }
 }
 
 export const productsService = new ProductsService()

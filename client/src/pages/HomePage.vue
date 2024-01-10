@@ -9,7 +9,7 @@
         </div>
       </div>
     </section>
-    <section v-if="products.length" class="row mt-3 justify-content-around">
+    <section v-if="products.length" class="row mt-3 justify-content-center">
       <div v-for="product in products" :key="product.id" class="col-12 col-md-5">
         <!-- NOTE I'm not sure if this is the best way to this. If I get a chance I'll ask Jerms.-->
         <div v-if="product.category == 'console'">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </section>
-    <section v-if="products.length" class="row mt-3 justify-content-around">
+    <section v-if="products.length" class="row mt-3 justify-content-center">
       <div v-for="product in products" :key="product.id" class="col-12 col-md-5">
         <div v-if="product.category == 'component'">
           <ProductCard :product="product" />
@@ -79,8 +79,8 @@ export default {
 
 <style scoped lang="scss">
 .hero-img {
-  background-image: url(https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=3271&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  height: 45rem;
+  background-image: url(https://monogramcc.com/static/9a0b554db1990565457610c5f83b3ad7/a464d/shop_cta_xl_896f6b8270.jpg);
+  height: 42.5rem;
   width: auto;
   background-position: center;
   background-size: cover;
@@ -97,12 +97,12 @@ export default {
 .hero-txt {
   margin-top: 19rem;
   color: #ff8b68;
-  background-color: rgba(0, 0, 0, 0.24);
-  backdrop-filter: blur(14px);
-  padding: 0.2rem 2rem 0.2rem;
+  background-color: rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(7px);
+  padding: 0.8rem 2rem 0.2rem 2rem;
   border-radius: 10px;
-  width: 100dvh;
-  height: 14dvh;
+  width: 50rem;
+  height: 8rem;
 }
 
 .hero-txt-2 {

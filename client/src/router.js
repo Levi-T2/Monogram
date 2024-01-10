@@ -26,6 +26,11 @@ const routes = [
     name: 'Workflows',
     component: loadPage('WorkflowPage')
   },
+  {
+    path: '/support',
+    name: 'Support',
+    component: loadPage('SupportPage')
+  },
   // Unused Paths
   // {
   //   path: '/account',
